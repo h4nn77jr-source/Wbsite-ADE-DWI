@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | Ade Dwi Djoan Raharjo</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: #080808;
+
+            color: #ffffff;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background: rgba(8, 8, 8, 0.95);
+
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #252525;
+
+            padding: 18px 8%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        nav h2 {
+            color: #ff2b2b;
+
+            font-size: 25px;
+
+            letter-spacing: 2px;
+        }
+
+
+        nav ul {
+            display: flex;
+
+            gap: 30px;
+
+            list-style: none;
+        }
+
+
+        nav a {
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        nav a:hover {
+            color: #ff2b2b;
+        }
+
+
+        /* =========================
+           HOME
+        ========================= */
+
+        .home {
+            min-height: 92vh;
+
+            padding: 80px 8%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 60px;
+
+            background:
+                radial-gradient(
+                    circle at 80% 50%,
+                    rgba(255, 30, 30, 0.12),
+                    transparent 35%
+                );
+        }
+
+
+        .home-text {
+            max-width: 700px;
+        }
+
+
+        .welcome {
+            color: #ff2b2b;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            font-size: 14px;
+        }
+
+
+        .home h1 {
+            font-size: 65px;
+
+            line-height: 1.1;
+
+            margin: 15px 0;
+        }
+
+
+        .home h1 span {
+            color: #ff2b2b;
+        }
+
+
+        .home h2 {
+            color: #dddddd;
+
+            font-size: 24px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .home-description {
+            color: #aaaaaa;
+
+            font-size: 18px;
+
+            max-width: 650px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .button {
+            display: inline-block;
+
+            background: #ff2b2b;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 13px 25px;
+
+            margin: 5px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .button:hover {
+            background: #d60000;
+
+            transform: translateY(-3px);
+        }
+
+
+        .button-outline {
+            background: transparent;
+
+            border: 1px solid #ff2b2b;
+
+            color: #ff2b2b;
+        }
+
+
+        .button-outline:hover {
+            background: #ff2b2b;
+
+            color: white;
+        }
+
+
+        /* =========================
+           FOTO PROFIL
+        ========================= */
+
+        .profile {
+            width: 350px;
+
+            height: 470px;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            border: 2px solid #ff2b2b;
+
+            background: #151515;
+
+            box-shadow:
+                0 0 40px rgba(255, 30, 30, 0.25);
+
+            flex-shrink: 0;
+        }
+
+
+        .profile img {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center top;
+
+            display: block;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 90px 8%;
+        }
+
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+
+        .section-title h2 {
+            color: #ffffff;
+
+            font-size: 40px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .section-title h2 span {
+            color: #ff2b2b;
+        }
+
+
+        .section-title p {
+            color: #888888;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: #0e0e0e;
+
+            border-top: 1px solid #202020;
+
+            border-bottom: 1px solid #202020;
+        }
+
+
+        .about-content {
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+
+            font-size: 18px;
+
+            color: #bbbbbb;
+        }
+
+
+        .about-content strong {
+            color: #ffffff;
+        }
+
+
+        .school {
+            color: #ff2b2b;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           MATERI
+        ========================= */
+
+        .materi {
+            background: #080808;
+        }
+
+
+        .materi-grid {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* =========================
+           MATERI CARD
+        ========================= */
+
+        .materi-card {
+            background: #121212;
+
+            border: 1px solid #292929;
+
+            border-radius: 15px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .materi-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 3px;
+
+            background: #ff2b2b;
+        }
+
+
+        .materi-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #ff2b2b;
+
+            box-shadow:
+                0 15px 40px rgba(255, 30, 30, 0.15);
+        }
+
+
+        .materi-icon {
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .materi-card h3 {
+            font-size: 23px;
+
+            color: #ffffff;
+
+            margin-bottom: 12px;
+        }
+
+
+        .materi-card p {
+            color: #999999;
+
+            margin-bottom: 20px;
+        }
+
+
+        .materi-button {
+            display: inline-block;
+
+            color: #ff2b2b;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border: 1px solid #ff2b2b;
+
+            padding: 9px 18px;
+
+            border-radius: 6px;
+
+            transition: 0.3s;
+        }
+
+
+        .materi-button:hover {
+            background: #ff2b2b;
+
+            color: white;
+        }
+
+
+        /* =========================
+           DETAIL MATERI
+        ========================= */
+
+        .materi-detail {
+            max-width: 1100px;
+
+            margin: 70px auto 0;
+
+            background: #101010;
+
+            border: 1px solid #292929;
+
+            border-radius: 15px;
+
+            padding: 35px;
+        }
+
+
+        .materi-detail h3 {
+            color: #ff2b2b;
+
+            font-size: 27px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .materi-detail p {
+            color: #999999;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           CANVA
+        ========================= */
+
+        .canva-container {
+            position: relative;
+
+            width: 100%;
+
+            height: 0;
+
+            padding-top: 56.25%;
+
+            overflow: hidden;
+
+            border-radius: 12px;
+
+            background: #181818;
+
+            border: 1px solid #292929;
+        }
+
+
+        .canva-container iframe {
+            position: absolute;
+
+            width: 100%;
+
+            height: 100%;
+
+            top: 0;
+
+            left: 0;
+
+            border: none;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: #0e0e0e;
+
+            border-top: 1px solid #202020;
+        }
+
+
+        .contact-container {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .contact-card {
+            background: #151515;
+
+            border: 1px solid #292929;
+
+            border-radius: 12px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+
+        .contact-card:hover {
+            border-color: #ff2b2b;
+
+            transform: translateY(-6px);
+        }
+
+
+        .contact-card h3 {
+            color: #ff2b2b;
+
+            margin-bottom: 10px;
+        }
+
+
+        .contact-card a {
+            color: #cccccc;
+
+            text-decoration: none;
+
+            word-break: break-word;
+        }
+
+
+        .contact-card a:hover {
+            color: #ff2b2b;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #050505;
+
+            border-top: 1px solid #222222;
+
+            color: #777777;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+
+        footer strong {
+            color: #ff2b2b;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .home {
+                flex-direction: column-reverse;
+
+                text-align: center;
+            }
+
+
+            .home h1 {
+                font-size: 48px;
+            }
+
+
+            .profile {
+                width: 300px;
+
+                height: 400px;
+            }
+
+
+            .materi-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .contact-container {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            nav ul {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .home {
+                padding-top: 50px;
+            }
+
+
+            .home h1 {
+                font-size: 40px;
+            }
+
+
+            .home h2 {
+                font-size: 20px;
+            }
+
+
+            .profile {
+                width: 260px;
+
+                height: 350px;
+            }
+
+
+            .materi-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+
+            section {
+                padding: 70px 5%;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+    <h2>ADE.</h2>
+
+    <ul>
+
+        <li>
+            <a href="#beranda">
+                Beranda
+            </a>
+        </li>
+
+        <li>
+            <a href="#tentang">
+                Tentang Saya
+            </a>
+        </li>
+
+        <li>
+            <a href="#materi">
+                Materi
+            </a>
+        </li>
+
+        <li>
+            <a href="#hubungi">
+                Hubungi
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- =========================
+     BERANDA
+========================= -->
+
+<section class="home" id="beranda">
+
+    <div class="home-text">
+
+        <p class="welcome">
+            SELAMAT DATANG DI WEBSITE SAYA
+        </p>
+
+
+        <h1>
+            Halo, Saya
+            <span>Ade</span>
+        </h1>
+
+
+        <h2>
+            Siswa SMK Negeri 1 Kaliwungu
+        </h2>
+
+
+        <p class="home-description">
+
+            Saya adalah Ade Dwi Djoan Raharjo,
+            seorang siswa yang tertarik dengan
+            teknologi, komputer, jaringan,
+            coding, dan pengembangan website.
+
+        </p>
+
+
+        <a
+            href="#tentang"
+            class="button">
+
+            Tentang Saya
+
+        </a>
+
+
+        <a
+            href="#materi"
+            class="button button-outline">
+
+            Lihat Materi
+
+        </a>
+
+    </div>
+
+
+
+    <!-- FOTO -->
+
+    <div class="profile">
+
+        <img
+            src="foto.jpg"
+            alt="Foto Ade Dwi Djoan Raharjo">
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     TENTANG SAYA
+========================= -->
+
+<section
+    class="about"
+    id="tentang">
+
+    <div class="section-title">
+
+        <h2>
+            Tentang <span>Saya</span>
+        </h2>
+
+        <p>
+            Kenali saya lebih dekat
+        </p>
+
+    </div>
+
+
+    <div class="about-content">
+
+        <p>
+
+            Halo! Nama saya
+            <strong>
+                Ade Dwi Djoan Raharjo
+            </strong>.
+
+            Saya merupakan siswa dari
+            <span class="school">
+                SMK Negeri 1 Kaliwungu
+            </span>.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            Saya memiliki ketertarikan
+            terhadap dunia teknologi dan komputer.
+
+            Saat ini saya sedang mempelajari
+            coding, website, jaringan komputer,
+            desain digital, dan berbagai teknologi
+            lainnya.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            Website ini dibuat sebagai portfolio
+            untuk menampilkan profil, materi
+            pembelajaran, dan hasil karya saya.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MATERI
+========================= -->
+
+<section
+    class="materi"
+    id="materi">
+
+    <div class="section-title">
+
+        <h2>
+            Materi <span>Pembelajaran</span>
+        </h2>
+
+        <p>
+            Kumpulan materi dan hasil karya saya
+        </p>
+
+    </div>
+
+
+
+    <!-- MATERI CARD -->
+
+    <div class="materi-grid">
+
+
+        <!-- MATERI 1 -->
+
+        <div class="materi-card">
+
+            <div class="materi-icon">
+                💻
+            </div>
+
+            <h3>
+                Pengenalan Komputer
+            </h3>
+
+            <p>
+
+                Materi mengenai pengenalan
+                komputer dan komponen dasar
+                yang terdapat pada komputer.
+
+            </p>
+
+            <a
+                href="#materi-komputer"
+                class="materi-button">
+
+                Lihat Materi →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- MATERI 2 -->
+
+        <div class="materi-card">
+
+            <div class="materi-icon">
+                🖥️
+            </div>
+
+            <h3>
+                Perangkat Keras
+            </h3>
+
+            <p>
+
+                Materi tentang berbagai
+                hardware komputer dan fungsi
+                masing-masing komponen.
+
+            </p>
+
+            <a
+                href="#materi-hardware"
+                class="materi-button">
+
+                Lihat Materi →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- MATERI 3 -->
+
+        <div class="materi-card">
+
+            <div class="materi-icon">
+                🌐
+            </div>
+
+            <h3>
+                Jaringan Komputer
+            </h3>
+
+            <p>
+
+                Materi mengenai jaringan,
+                perangkat jaringan, IP address,
+                dan koneksi internet.
+
+            </p>
+
+            <a
+                href="#materi-jaringan"
+                class="materi-button">
+
+                Lihat Materi →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- MATERI 4 -->
+
+        <div class="materi-card">
+
+            <div class="materi-icon">
+                🎨
+            </div>
+
+            <h3>
+                Desain Digital
+            </h3>
+
+            <p>
+
+                Kumpulan desain dan hasil karya
+                yang saya buat menggunakan
+                berbagai aplikasi desain.
+
+            </p>
+
+            <a
+                href="#materi-desain"
+                class="materi-button">
+
+                Lihat Materi →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- MATERI 5 -->
+
+        <div class="materi-card">
+
+            <div class="materi-icon">
+                👨‍💻
+            </div>
+
+            <h3>
+                Coding & Website
+            </h3>
+
+            <p>
+
+                Materi pembelajaran mengenai
+                HTML, CSS, coding, dan pembuatan
+                website.
+
+            </p>
+
+            <a
+                href="#materi-coding"
+                class="materi-button">
+
+                Lihat Materi →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- MATERI 6 -->
+
+        <div class="materi-card">
+
+            <div class="materi-icon">
+                📚
+            </div>
+
+            <h3>
+                Materi Lainnya
+            </h3>
+
+            <p>
+
+                Materi pembelajaran lainnya
+                yang akan saya tambahkan
+                ke dalam portfolio.
+
+            </p>
+
+            <a
+                href="#materi-lainnya"
+                class="materi-button">
+
+                Lihat Materi →
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         DETAIL MATERI CANVA
+    ========================= -->
+
+
+    <!-- PENGENALAN KOMPUTER -->
+
+    <div
+        class="materi-detail"
+        id="materi-komputer">
+
+        <h3>
+            💻 Pengenalan Komputer
+        </h3>
+
+        <p>
+
+            Materi pembelajaran mengenai
+            pengenalan komputer.
+
+        </p>
+
+
+        <div class="canva-container">
+
+            <iframe
+                src="https://www.canva.com/design/DAHTcHyiDIQ/f9-4whVmKXZaQ4qXjSuyTw/view?embed"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- PERANGKAT KERAS -->
+
+    <div
+        class="materi-detail"
+        id="materi-hardware">
+
+        <h3>
+            🖥️ Perangkat Keras Komputer
+        </h3>
+
+        <p>
+
+            Tempat untuk materi tentang CPU,
+            motherboard, RAM, VGA, harddisk,
+            power supply, casing, dan komponen
+            komputer lainnya.
+
+        </p>
+
+        <!-- GANTI LINK CANVA DI SINI -->
+
+        <a
+            href="#"
+            class="button">
+
+            Buka Materi
+
+        </a>
+
+    </div>
+
+
+
+    <!-- JARINGAN -->
+
+    <div
+        class="materi-detail"
+        id="materi-jaringan">
+
+        <h3>
+            🌐 Jaringan Komputer
+        </h3>
+
+        <p>
+
+            Materi tentang router, switch,
+            access point, modem, NIC, repeater,
+            firewall, IP address, dan jaringan.
+
+        </p>
+
+        <!-- GANTI LINK CANVA DI SINI -->
+
+        <a
+            href="#"
+            class="button">
+
+            Buka Materi
+
+        </a>
+
+    </div>
+
+
+
+    <!-- DESAIN -->
+
+    <div
+        class="materi-detail"
+        id="materi-desain">
+
+        <h3>
+            🎨 Desain Digital
+        </h3>
+
+        <p>
+
+            Kumpulan desain dan hasil karya
+            digital saya.
+
+        </p>
+
+        <a
+            href="#"
+            class="button">
+
+            Lihat Karya
+
+        </a>
+
+    </div>
+
+
+
+    <!-- CODING -->
+
+    <div
+        class="materi-detail"
+        id="materi-coding">
+
+        <h3>
+            👨‍💻 Coding & Website
+        </h3>
+
+        <p>
+
+            Materi tentang HTML, CSS,
+            JavaScript, dan pembuatan website.
+
+        </p>
+
+        <a
+            href="#"
+            class="button">
+
+            Lihat Materi
+
+        </a>
+
+    </div>
+
+
+
+    <!-- LAINNYA -->
+
+    <div
+        class="materi-detail"
+        id="materi-lainnya">
+
+        <h3>
+            📚 Materi Lainnya
+        </h3>
+
+        <p>
+
+            Materi pembelajaran lainnya
+            akan ditambahkan di sini.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     HUBUNGI
+========================= -->
+
+<section
+    class="contact"
+    id="hubungi">
+
+    <div class="section-title">
+
+        <h2>
+            Hubungi <span>Saya</span>
+        </h2>
+
+        <p>
+            Temukan saya di media sosial
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <!-- EMAIL -->
+
+        <div class="contact-card">
+
+            <h3>
+                📧 Email
+            </h3>
+
+            <a
+                href="mailto:h4nn77jr@gmail.com">
+
+                h4nn77jr@gmail.com
+
+            </a>
+
+        </div>
+
+
+
+        <!-- TIKTOK -->
+
+        <div class="contact-card">
+
+            <h3>
+                🎵 TikTok
+            </h3>
+
+            <a
+                href="https://www.tiktok.com/@__han41"
+                target="_blank">
+
+                @__han41
+
+            </a>
+
+        </div>
+
+
+
+        <!-- YOUTUBE -->
+
+        <div class="contact-card">
+
+            <h3>
+                ▶️ YouTube
+            </h3>
+
+            <a
+                href="https://www.youtube.com/@PengiChannelOffcial"
+                target="_blank">
+
+                PengiChannelOffcial
+
+            </a>
+
+        </div>
+
+
+
+        <!-- INSTAGRAM -->
+
+        <div class="contact-card">
+
+            <h3>
+                📷 Instagram
+            </h3>
+
+            <a
+                href="https://instagram.com/_han7878"
+                target="_blank">
+
+                @_han7878
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026
+        <strong>
+            Ade Dwi Djoan Raharjo
+        </strong>
+    </p>
+
+    <p>
+        Siswa SMK Negeri 1 Kaliwungu
+    </p>
+
+</footer>
+
+
+
+</body>
+</html>
